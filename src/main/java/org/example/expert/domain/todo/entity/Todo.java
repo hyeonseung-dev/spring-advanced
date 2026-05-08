@@ -7,6 +7,7 @@ import org.example.expert.domain.comment.entity.Comment;
 import org.example.expert.domain.common.entity.Timestamped;
 import org.example.expert.domain.manager.entity.Manager;
 import org.example.expert.domain.user.entity.User;
+import org.springframework.data.jpa.repository.EntityGraph;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +16,10 @@ import java.util.List;
 @Entity
 @NoArgsConstructor
 @Table(name = "todos")
+@NamedEntityGraph(
+    name = "Todo.withUser",
+    attributeNodes = @NamedAttributeNode("user")
+)
 public class Todo extends Timestamped {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
