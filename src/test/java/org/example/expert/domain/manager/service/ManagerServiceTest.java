@@ -68,7 +68,7 @@ class ManagerServiceTest {
             managerService.saveManager(authUser, todoId, managerSaveRequest)
         );
 
-        assertEquals("일정을 생성한 유저만 담당자를 지정할 수 있습니다.", exception.getMessage());
+        assertEquals("일정의 유저를 찾을 수 없습니다.", exception.getMessage());
     }
 
     @Test // 테스트코드 샘플
