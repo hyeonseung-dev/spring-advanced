@@ -24,7 +24,7 @@ public class AuthService {
     private final JwtUtil jwtUtil;
 
     @Transactional
-    public SignupResponse signup(SignupRequest signupRequest) {
+    public void signup(SignupRequest signupRequest) {
 
         if (userRepository.existsByEmail(signupRequest.getEmail())) {
             throw new InvalidRequestException("이미 존재하는 이메일입니다.");
@@ -39,11 +39,7 @@ public class AuthService {
                 encodedPassword,
                 userRole
         );
-        User savedUser = userRepository.save(newUser);
-
-        String bearerToken = jwtUtil.createToken(savedUser.getId(), savedUser.getEmail(), userRole);
-
-        return new SignupResponse(bearerToken);
+        userRepository.save(newUser);
     }
 
     @Transactional(readOnly = true)
