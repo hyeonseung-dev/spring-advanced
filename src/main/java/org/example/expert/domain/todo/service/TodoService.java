@@ -28,7 +28,13 @@ public class TodoService {
     public TodoSaveResponse saveTodo(AuthUser authUser, TodoSaveRequest todoSaveRequest) {
         User user = User.fromAuthUser(authUser);
 
-        String weather = weatherClient.getTodayWeather();
+        String weather;
+
+        try {
+            weather = weatherClient.getTodayWeather();
+        } catch (Exception e) {
+            weather = "날씨 정보를 불러 올 수 없습니다.";
+        }
 
         Todo newTodo = new Todo(
                 todoSaveRequest.getTitle(),
