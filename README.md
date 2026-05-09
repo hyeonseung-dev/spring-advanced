@@ -195,6 +195,8 @@ public TodoSaveResponse saveTodo(AuthUser authUser, TodoSaveRequest todoSaveRequ
 
 #### 포스트맨 화면
 
+![날씨 API 실패](./images/weather-error.png)
+
 *포스트 맨 화면은 벨로그에서 확인 https://velog.io/@khs0305/TIL-내일배움캠프-CH-3-심화-Spring코드-개선-과제
 
 ---
