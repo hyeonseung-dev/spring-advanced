@@ -197,9 +197,6 @@ public TodoSaveResponse saveTodo(AuthUser authUser, TodoSaveRequest todoSaveRequ
 
 ![문제 해결 전](./imeges/weather-error.png)
 
-
-*포스트 맨 화면은 벨로그에서 확인 https://velog.io/@khs0305/TIL-내일배움캠프-CH-3-심화-Spring코드-개선-과제
-
 ---
 
 #### 문제 해결 후
